@@ -1,7 +1,8 @@
-// Type definitions for Matter.js - 0.9.1
+// Type definitions for Matter.js - 0.13.0
 // Project: https://github.com/liabru/matter-js
 // Definitions by: Ivane Gegia <https://twitter.com/ivanegegia>,
-//                 David Asmuth <https://github.com/piranha771>
+//                 David Asmuth <https://github.com/piranha771>,
+//                 Phil Shum <https://github.com/philpill>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 export = Matter;
@@ -1520,6 +1521,14 @@ declare namespace Matter {
         static allConstraints(composite: Composite): Array<Composite>;
 
         /**
+         * Returns the union of the bounds of all of the composite's bodies.
+         * @method bounds
+         * @param {composite} composite The composite.
+         * @returns {bounds} The composite bounds.
+         */
+        static bounds(composite: Composite): Bounds;
+
+        /**
          * Removes all bodies, constraints and composites from the given composite.
          * Optionally clearing its children recursively.
          * @method clear
@@ -1577,8 +1586,6 @@ declare namespace Matter {
          * @return {composite} The original composite with the objects removed
          */
         static remove(composite: Composite, object: Body | Composite | Constraint, deep?: boolean): Composite;
-
-
 
         /**
          * Sets the composite's `isModified` flag.
